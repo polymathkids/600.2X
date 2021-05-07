@@ -1,0 +1,59 @@
+def stdDevOfLengths(L):
+    """
+    L: a list of strings
+
+    returns: float, the standard deviation of the lengths of the strings,
+      or NaN if L is empty.
+    """
+    if (len(L) == 0):
+        return float('NaN')
+    strDeviate = 0
+    sumList = 0
+    sumDeviate = 0
+    
+    
+    #compute Mean first
+    for i in L:
+        sumList += len(i)
+
+    meanList = sumList/len(L)
+
+    #compute the sum of the ind length of each item minus the mean squared
+    for i in L:
+        sumDeviate += (len(i)-meanList)**2
+    
+
+   
+    strDeviate = (sumDeviate/len(L))**(.5)
+    return strDeviate
+
+def stdDevOfNumList(L):
+    """
+    L: a list of strings
+
+    returns: float, the standard deviation of the lengths of the strings,
+      or NaN if L is empty.
+    """
+    if (len(L) == 0):
+        return float('NaN')
+    strDeviate = 0
+    sumList = 0
+    sumDeviate = 0
+    
+    
+    #compute Mean first
+    for i in L:
+        sumList += i
+
+    meanList = sumList/len(L)
+
+    #compute the sum of the ind length of each item minus the mean squared
+    for i in L:
+        sumDeviate += (i-meanList)**2
+    
+
+   
+    strDeviate = (sumDeviate/len(L))**(.5)
+    #print coefficient of variation
+    print(strDeviate/meanList)
+    return strDeviate
